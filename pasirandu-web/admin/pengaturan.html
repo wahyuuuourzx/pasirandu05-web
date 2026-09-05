@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pengaturan - Pasirandu 05</title>
+
+    <link rel="stylesheet" href="pengaturan.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+   <aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            P05
+        </div>
+
+        <div>
+            <h2>Pasirandu 05</h2>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+    <nav class="menu">
+
+        <a href="./dashboard.html">
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+        <a href="./anggota.html">
+            <span>👥</span>
+            Anggota
+        </a>
+
+        <a href="./kegiatan.html">
+            <span>📅</span>
+            Kegiatan
+        </a>
+
+        <a href="./galeri.html">
+            <span>📷</span>
+            Galeri
+        </a>
+
+        <a href="./agenda.html">
+            <span>📋</span>
+            Agenda
+        </a>
+
+        <a href="./pesan.html">
+            <span>💬</span>
+            Pesan
+        </a>
+
+        <a href="./pengaturan.html "class="active">
+            <span>⚙</span>
+            Pengaturan
+        </a>
+
+    </nav>
+
+    <button id="logoutBtn" class="logout-btn">
+        ⇥ Keluar
+    </button>
+
+</aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Pengaturan</h1>
+
+                <p>
+                    Kelola akun administrator Pasirandu 05.
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- ACCOUNT -->
+        <section class="settings-card">
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Akun Administrator</h2>
+
+                    <p>
+                        Informasi akun admin yang sedang digunakan.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="account-info">
+
+                <div class="info-row">
+
+                    <span class="info-label">
+                        Email
+                    </span>
+
+                    <strong id="adminEmail">
+                        Memuat...
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="info-label">
+                        Status
+                    </span>
+
+                    <span class="status-active">
+                        ● Aktif
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PASSWORD -->
+        <section class="settings-card">
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    🔐
+                </div>
+
+                <div>
+                    <h2>Ganti Password</h2>
+
+                    <p>
+                        Gunakan password baru untuk akun administrator.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="passwordForm" class="settings-form">
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        Password Baru
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Masukkan password baru"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Konfirmasi Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Ulangi password baru"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                    id="passwordBtn"
+                >
+                    Simpan Password
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- SECURITY -->
+        <section class="settings-card security-card">
+
+            <div class="card-heading">
+
+                <div class="card-icon">
+                    🛡️
+                </div>
+
+                <div>
+                    <h2>Keamanan</h2>
+
+                    <p>
+                        Kelola sesi administrator website.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="security-box">
+
+                <div>
+
+                    <strong>Sesi Login</strong>
+
+                    <p>
+                        Kamu sedang login sebagai administrator
+                        Pasirandu 05.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="logoutBtn2"
+                    class="danger-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="auth.js"></script>
+
+<script src="pengaturan.js"></script>
+
+</body>
+</html>

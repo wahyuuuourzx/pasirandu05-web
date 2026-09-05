@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesan - Pasirandu 05</title>
+
+    <link rel="stylesheet" href="pesan.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+ <aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            P05
+        </div>
+
+        <div>
+            <h2>Pasirandu 05</h2>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+    <nav class="menu">
+
+        <a href="./dashboard.html">
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+        <a href="./anggota.html">
+            <span>👥</span>
+            Anggota
+        </a>
+
+        <a href="./kegiatan.html">
+            <span>📅</span>
+            Kegiatan
+        </a>
+
+        <a href="./galeri.html">
+            <span>📷</span>
+            Galeri
+        </a>
+
+        <a href="./agenda.html">
+            <span>📋</span>
+            Agenda
+        </a>
+
+        <a href="./pesan.html" class="active">
+            <span>💬</span>
+            Pesan
+        </a>
+
+        <a href="./pengaturan.html">
+            <span>⚙</span>
+            Pengaturan
+        </a>
+
+    </nav>
+
+    <button id="logoutBtn" class="logout-btn">
+        ⇥ Keluar
+    </button>
+
+</aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Pesan</h1>
+                    <p>Kelola pesan yang masuk dari pengunjung website.</p>
+                </div>
+
+            </header>
+
+
+            <!-- STAT CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📩</div>
+
+                    <div>
+                        <span>Total Pesan</span>
+                        <h2 id="totalMessages">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔵</div>
+
+                    <div>
+                        <span>Belum Dibaca</span>
+                        <h2 id="unreadMessages">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+
+                    <div>
+                        <span>Sudah Dibaca</span>
+                        <h2 id="readMessages">0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- MESSAGE CARD -->
+            <section class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Pesan Masuk</h2>
+                        <p>Daftar pesan dari pengunjung.</p>
+                    </div>
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Cari pesan..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE LIST -->
+                <div id="messageList" class="message-list">
+
+                    <!-- Pesan akan muncul melalui JavaScript -->
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+<script src="pesan.js"></script>
+
+</body>
+</html>

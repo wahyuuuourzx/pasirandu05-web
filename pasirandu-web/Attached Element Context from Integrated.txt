@@ -1,0 +1,29 @@
+Attached Element Context from Integrated Browser
+
+Element: html
+
+URL: file:///c%3A/Users/muham/Downloads/pasirandu-05-website/pasirandu-web/index.html
+
+HTML Path: html
+
+Outer HTML:
+```html
+<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">Forbidden. File does not reside within a trusted folder.</pre></body></html>
+```
+
+Dimensions:
+- top: 0px
+- left: 0px
+- width: 784px
+- height: 41px
+
+CSS:
+```css
+
+
+/* Resolved values */
+display: block;
+height: 41px;
+view-transition-name: root /*UA*/;
+width: 784px;
+```

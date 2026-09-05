@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anggota - Pasirandu 05</title>
+
+    <link rel="stylesheet" href="anggota.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+ <aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            P05
+        </div>
+
+        <div>
+            <h2>Pasirandu 05</h2>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+    <nav class="menu">
+
+        <a href="./dashboard.html">
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+       <a href="./anggota.html" class="active">
+             <span>👥</span>
+             Anggota
+        </a>
+
+        <a href="./kegiatan.html">
+            <span>📅</span>
+            Kegiatan
+        </a>
+
+        <a href="./galeri.html">
+            <span>📷</span>
+            Galeri
+        </a>
+
+        <a href="./agenda.html">
+            <span>📋</span>
+            Agenda
+        </a>
+
+        <a href="./pesan.html">
+            <span>💬</span>
+            Pesan
+        </a>
+
+        <a href="./pengaturan.html">
+            <span>⚙</span>
+            Pengaturan
+        </a>
+
+    </nav>
+
+    <button id="logoutBtn" class="logout-btn">
+        ⇥ Keluar
+    </button>
+
+</aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Anggota</h1>
+
+                <p>
+                    Kelola data anggota Pemuda-Pemudi Pasirandu 05.
+                </p>
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ACTION BAR -->
+        <section class="action-bar">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari nama anggota..."
+                >
+
+            </div>
+
+
+            <button
+                class="add-btn"
+                id="addMemberBtn">
+
+                + Tambah Anggota
+
+            </button>
+
+        </section>
+
+
+        <!-- TABLE -->
+        <section class="table-card">
+
+            <div class="table-header">
+
+                <div>
+                    <h2>Daftar Anggota</h2>
+
+                    <p>
+                        Data anggota Pemuda-Pemudi Pasirandu 05
+                    </p>
+                </div>
+
+                <div class="total-member">
+
+                    Total:
+                    <strong id="totalMembers">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>No</th>
+
+                            <th>Nama</th>
+
+                            <th>Jenis Kelamin</th>
+
+                            <th>Jabatan</th>
+
+                            <th>No. HP</th>
+
+                            <th>Aksi</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="memberTableBody">
+
+                        <!-- DATA AKAN MUNCUL DARI JAVASCRIPT -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL TAMBAH / EDIT -->
+
+<div
+    class="modal"
+    id="memberModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Tambah Anggota
+                </h2>
+
+                <p>
+                    Masukkan informasi anggota.
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                id="closeModal">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="memberForm">
+
+            <input
+                type="hidden"
+                id="memberIndex">
+
+
+            <div class="form-group">
+
+                <label>
+                    Nama Lengkap
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama lengkap"
+                    required>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Jenis Kelamin
+                    </label>
+
+                    <select
+                        id="jenisKelamin"
+                        required>
+
+                        <option value="">
+                            Pilih
+                        </option>
+
+                        <option value="Laki-laki">
+                            Laki-laki
+                        </option>
+
+                        <option value="Perempuan">
+                            Perempuan
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Jabatan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jabatan"
+                        placeholder="Contoh: Ketua"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Nomor HP
+                </label>
+
+                <input
+                    type="tel"
+                    id="noHp"
+                    placeholder="08xxxxxxxxxx"
+                    required>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn">
+
+                    Batal
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    Simpan Anggota
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+<script src="anggota.js"></script>
+
+</body>
+
+</html>
