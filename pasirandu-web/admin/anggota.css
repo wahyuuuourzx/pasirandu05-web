@@ -718,27 +718,379 @@ tbody tr:hover {
 
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
 
-    .sidebar {
-        position: relative;
+    html,
+    body {
         width: 100%;
-        height: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
 
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
+    /* LAYOUT */
+    .dashboard {
+        display: block !important;
+        width: 100% !important;
+        min-height: 100vh;
     }
+
+
+    /* SIDEBAR */
+    .sidebar {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 14px 12px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* BRAND */
+    .brand {
+        padding: 0 5px 14px !important;
+        gap: 9px;
+    }
+
+    .brand-logo {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 9px;
+        font-size: 11px;
+    }
+
+    .brand h2 {
+        font-size: 16px;
+    }
+
+    .brand span {
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
 
     .menu {
-        flex-direction: row;
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        width: 100% !important;
+
+        gap: 6px !important;
+
+        overflow: visible !important;
+
+        padding: 0 !important;
+    }
+
+
+    .menu a {
+        display: flex !important;
+
+        align-items: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 10px 9px !important;
+
+        gap: 7px !important;
+
+        border-radius: 9px;
+
+        font-size: 11px !important;
+
+        white-space: nowrap !important;
+
+        box-sizing: border-box;
+    }
+
+
+    .menu a span {
+        width: 18px !important;
+
+        flex-shrink: 0;
+
+        font-size: 13px !important;
+    }
+
+
+    /* KELUAR */
+    .logout-btn {
+        width: 100% !important;
+
+        margin-top: 12px !important;
+
+        padding: 10px !important;
+
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 18px 14px !important;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       TOPBAR
+    ========================= */
+
+    .topbar {
+        display: flex;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+
+        margin-bottom: 4px;
+    }
+
+    .topbar p {
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ADMIN PROFILE */
+    .admin-profile {
+        flex-shrink: 0;
+
+        gap: 7px;
+    }
+
+    .admin-avatar {
+        width: 36px;
+        height: 36px;
+
+        font-size: 12px;
+    }
+
+    .admin-profile strong {
+        font-size: 11px;
+    }
+
+    .admin-profile span {
+        font-size: 9px;
+    }
+
+
+    /* =========================
+       ACTION BAR
+    ========================= */
+
+    .action-bar {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        width: 100%;
+    }
+
+
+    .search-box {
+        width: 100% !important;
+
+        box-sizing: border-box;
+    }
+
+
+    .add-btn {
+        width: 100%;
+
+        padding: 11px;
+    }
+
+
+    /* =========================
+       TABLE
+    ========================= */
+
+    .table-card {
+        width: 100%;
+
+        overflow: hidden;
+
+        border-radius: 14px;
+    }
+
+
+    .table-header {
+        padding: 18px;
+
+        gap: 10px;
+    }
+
+
+    .table-header h2 {
+        font-size: 16px;
+    }
+
+
+    .table-header p {
+        font-size: 11px;
+    }
+
+
+    .total-member {
+        flex-shrink: 0;
+
+        padding: 7px 10px;
+
+        font-size: 11px;
+    }
+
+
+    /* TABEL BOLEH SCROLL SENDIRI */
+    .table-container {
+        width: 100%;
+
         overflow-x: auto;
     }
 
+
+    table {
+        min-width: 750px;
+    }
+
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+        padding: 14px;
+    }
+
+
+    .modal-content {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 20px;
+
+        border-radius: 15px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    .modal-actions {
+        flex-direction: column-reverse;
+
+        gap: 8px;
+    }
+
+
+    .cancel-btn,
+    .save-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 400px) {
+
+    .sidebar {
+        padding: 12px 10px !important;
+    }
+
+
+    .menu {
+        gap: 5px !important;
+    }
+
+
     .menu a {
-        white-space: nowrap;
+        padding: 9px 7px !important;
+
+        font-size: 10px !important;
+    }
+
+
+    .menu a span {
+        font-size: 12px !important;
+    }
+
+
+    .main-content {
+        padding: 16px 11px !important;
+    }
+
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+
+
+    .topbar p {
+        font-size: 10px;
+    }
+
+
+    .admin-profile div:last-child {
+        display: none;
     }
 
 }

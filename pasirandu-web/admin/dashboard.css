@@ -585,46 +585,40 @@ body {
 
 
     /* =========================
-       MENU
-    ========================= */
+   MENU MOBILE
+========================= */
 
     .menu {
-        display: flex;
-        flex-direction: row;
-
-        width: 100%;
-
-        gap: 6px;
-
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        padding-bottom: 4px;
-
-        scrollbar-width: none;
-    }
-
-    .menu::-webkit-scrollbar {
-        display: none;
-    }
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 6px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+}
 
     .menu a {
-        flex: 0 0 auto;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
 
-        padding: 9px 11px;
+    display: flex !important;
+    align-items: center !important;
 
-        font-size: 12px;
+    padding: 9px 10px !important;
+    gap: 7px !important;
 
-        white-space: nowrap;
+    font-size: 11px !important;
+    white-space: nowrap !important;
 
-        border-radius: 8px;
+    border-radius: 8px;
     }
 
     .menu a span {
-        width: auto;
-        font-size: 12px;
-    }
-
+    width: 18px !important;
+    flex-shrink: 0 !important;
+    font-size: 12px !important;
+}
 
     /* =========================
        LOGOUT
