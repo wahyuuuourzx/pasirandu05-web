@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,66 +12,66 @@
 
 <body>
 
+<div class="dashboard">
+
     <!-- SIDEBAR -->
-    <<aside class="sidebar">
+    <aside class="sidebar">
 
-    <div class="brand">
+        <div class="brand">
+            <div class="brand-logo">
+                P05
+            </div>
 
-        <div class="brand-logo">
-            P05
+            <div>
+                <h2>Pasirandu 05</h2>
+                <span>Admin Panel</span>
+            </div>
         </div>
 
-        <div>
-            <h2>Pasirandu 05</h2>
-            <span>Admin Panel</span>
-        </div>
+        <nav class="menu">
 
-    </div>
+            <a href="./dashboard.html">
+                <span>⌂</span>
+                Dashboard
+            </a>
 
-    <nav class="menu">
+            <a href="./anggota.html">
+                <span>👥</span>
+                Anggota
+            </a>
 
-        <a href="./dashboard.html">
-            <span>⌂</span>
-            Dashboard
-        </a>
+            <a href="./kegiatan.html">
+                <span>📅</span>
+                Kegiatan
+            </a>
 
-        <a href="./anggota.html">
-            <span>👥</span>
-            Anggota
-        </a>
+            <a href="./galeri.html" class="active">
+                <span>📷</span>
+                Galeri
+            </a>
 
-        <a href="./kegiatan.html">
-            <span>📅</span>
-            Kegiatan
-        </a>
+            <a href="./agenda.html">
+                <span>📋</span>
+                Agenda
+            </a>
 
-        <a href="./galeri.html" class="active">
-            <span>📷</span>
-            Galeri
-        </a>
+            <a href="./pesan.html">
+                <span>💬</span>
+                Pesan
+            </a>
 
-        <a href="./agenda.html">
-            <span>📋</span>
-            Agenda
-        </a>
+            <a href="./pengaturan.html">
+                <span>⚙</span>
+                Pengaturan
+            </a>
 
-        <a href="./pesan.html">
-            <span>💬</span>
-            Pesan
-        </a>
+        </nav>
 
-        <a href="./pengaturan.html">
-            <span>⚙</span>
-            Pengaturan
-        </a>
+        <button id="logoutBtn" class="logout-btn">
+            ⇥ Keluar
+        </button>
 
-    </nav>
-
-    <button id="logoutBtn" class="logout-btn">
-        ⇥ Keluar
-    </button>
-
-</aside>
+    </aside>
 
 
     <!-- MAIN CONTENT -->
@@ -81,16 +82,23 @@
 
             <div>
                 <h1>Galeri</h1>
-                <p>Kelola dokumentasi kegiatan Pasirandu 05</p>
+
+                <p>
+                    Kelola dokumentasi kegiatan Pasirandu 05
+                </p>
             </div>
 
             <div class="admin-profile">
-                <div class="profile-avatar">A</div>
+
+                <div class="profile-avatar">
+                    A
+                </div>
 
                 <div>
                     <strong>Admin</strong>
                     <span>Administrator</span>
                 </div>
+
             </div>
 
         </header>
@@ -100,6 +108,7 @@
         <section class="action-bar">
 
             <div class="search-box">
+
                 <span>⌕</span>
 
                 <input
@@ -107,35 +116,50 @@
                     id="searchInput"
                     placeholder="Cari foto..."
                 >
+
             </div>
 
-            <button id="addGalleryBtn" class="add-btn">
+            <button
+                id="addGalleryBtn"
+                class="add-btn">
+
                 + Tambah Foto
+
             </button>
 
         </section>
 
 
-        <!-- GALERI CARD -->
+        <!-- GALERI -->
         <section class="gallery-card">
 
             <div class="card-header">
 
                 <div>
                     <h2>Dokumentasi</h2>
-                    <p>Kumpulan foto kegiatan Pasirandu 05</p>
+
+                    <p>
+                        Kumpulan foto kegiatan Pasirandu 05
+                    </p>
                 </div>
 
                 <div class="total-gallery">
-                    <strong id="totalGallery">0</strong>
+
+                    <strong id="totalGallery">
+                        0
+                    </strong>
+
                     <span>Foto</span>
+
                 </div>
 
             </div>
 
 
-            <!-- GALLERY LIST -->
-            <div id="galleryGrid" class="gallery-grid">
+            <!-- GALLERY GRID -->
+            <div
+                id="galleryGrid"
+                class="gallery-grid">
 
                 <!-- Data foto akan muncul di sini -->
 
@@ -145,126 +169,148 @@
 
     </main>
 
+</div>
 
-    <!-- MODAL TAMBAH / EDIT -->
-    <div id="galleryModal" class="modal">
 
-        <div class="modal-content">
+<!-- MODAL -->
+<div
+    id="galleryModal"
+    class="modal">
 
-            <div class="modal-header">
+    <div class="modal-content">
 
-                <div>
-                    <h2 id="modalTitle">Tambah Foto</h2>
-                    <p>Tambahkan dokumentasi kegiatan</p>
-                </div>
+        <div class="modal-header">
 
-                <button id="closeModal" class="close-btn">
-                    ×
-                </button>
+            <div>
+
+                <h2 id="modalTitle">
+                    Tambah Foto
+                </h2>
+
+                <p>
+                    Tambahkan dokumentasi kegiatan
+                </p>
+
+            </div>
+
+            <button
+                id="closeModal"
+                class="close-btn">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="galleryForm">
+
+            <input
+                type="hidden"
+                id="galleryIndex"
+            >
+
+
+            <!-- FOTO -->
+            <div class="form-group">
+
+                <label for="foto">
+                    Foto
+                </label>
+
+                <input
+                    type="file"
+                    id="foto"
+                    accept="image/*"
+                >
+
+                <small>
+                    Pilih gambar JPG, PNG, atau WEBP.
+                </small>
 
             </div>
 
 
-            <form id="galleryForm">
+            <!-- JUDUL -->
+            <div class="form-group">
+
+                <label for="judul">
+                    Judul Foto
+                </label>
 
                 <input
-                    type="hidden"
-                    id="galleryIndex"
+                    type="text"
+                    id="judul"
+                    placeholder="Contoh: Kerja Bakti Pasirandu 05"
+                    required
                 >
 
-
-                <div class="form-group">
-
-                    <label for="foto">
-                        Foto
-                    </label>
-
-                    <input
-                        type="file"
-                        id="foto"
-                        accept="image/*"
-                    >
-
-                    <small>
-                        Pilih gambar JPG, PNG, atau WEBP.
-                    </small>
-
-                </div>
+            </div>
 
 
-                <div class="form-group">
+            <!-- TANGGAL -->
+            <div class="form-group">
 
-                    <label for="judul">
-                        Judul Foto
-                    </label>
+                <label for="tanggal">
+                    Tanggal
+                </label>
 
-                    <input
-                        type="text"
-                        id="judul"
-                        placeholder="Contoh: Kerja Bakti Pasirandu 05"
-                        required
-                    >
+                <input
+                    type="date"
+                    id="tanggal"
+                    required
+                >
 
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="tanggal">
-                        Tanggal
-                    </label>
-
-                    <input
-                        type="date"
-                        id="tanggal"
-                        required
-                    >
-
-                </div>
+            </div>
 
 
-                <div class="form-group">
+            <!-- DESKRIPSI -->
+            <div class="form-group">
 
-                    <label for="deskripsi">
-                        Deskripsi
-                    </label>
+                <label for="deskripsi">
+                    Deskripsi
+                </label>
 
-                    <textarea
-                        id="deskripsi"
-                        rows="4"
-                        placeholder="Deskripsi singkat foto..."
-                    ></textarea>
+                <textarea
+                    id="deskripsi"
+                    rows="4"
+                    placeholder="Deskripsi singkat foto..."
+                ></textarea>
 
-                </div>
+            </div>
 
 
-                <div class="modal-actions">
+            <!-- BUTTON -->
+            <div class="modal-actions">
 
-                    <button
-                        type="button"
-                        id="cancelBtn"
-                        class="cancel-btn"
-                    >
-                        Batal
-                    </button>
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="cancel-btn">
 
-                    <button
-                        type="submit"
-                        class="save-btn"
-                    >
-                        Simpan Foto
-                    </button>
+                    Batal
 
-                </div>
+                </button>
 
-            </form>
+                <button
+                    type="submit"
+                    class="save-btn">
 
-        </div>
+                    Simpan Foto
+
+                </button>
+
+            </div>
+
+        </form>
 
     </div>
 
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="auth.js"></script>
 <script src="galeri.js"></script>
 
