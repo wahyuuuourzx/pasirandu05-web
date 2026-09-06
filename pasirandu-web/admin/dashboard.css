@@ -239,8 +239,7 @@ body {
     gap: 16px;
 
     box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.04);
+        0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -358,8 +357,7 @@ body {
     padding: 24px;
 
     box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.04);
+        0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -397,7 +395,7 @@ body {
 }
 
 
-.quick-menu a > span {
+.quick-menu a>span {
     width: 38px;
     height: 38px;
 
@@ -445,12 +443,11 @@ body {
     align-items: center;
 
     box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.04);
+        0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 
-.status-card > div {
+.status-card>div {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -529,7 +526,9 @@ body {
         white-space: nowrap;
     }
 
-}/* =========================
+}
+
+/* =========================
    MOBILE RESPONSIVE
 ========================= */
 
@@ -593,4 +592,194 @@ body {
         width: 100%;
         overflow-x: auto;
     }
+}
+
+/* =========================================
+   MOBILE DASHBOARD
+========================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+
+        width: 100%;
+        height: auto;
+        min-height: auto;
+
+        padding: 14px 12px;
+        box-sizing: border-box;
+    }
+
+    /* BRAND */
+    .brand {
+        padding: 0 5px 14px;
+    }
+
+    .brand-logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        font-size: 11px;
+    }
+
+    .brand h2 {
+        font-size: 15px;
+    }
+
+    .brand span {
+        font-size: 10px;
+    }
+
+    /* MENU */
+    .menu {
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        gap: 6px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu a {
+        flex: 0 0 auto;
+
+        padding: 9px 11px;
+
+        font-size: 12px;
+        white-space: nowrap;
+
+        border-radius: 8px;
+    }
+
+    .menu a span {
+        font-size: 12px;
+        width: auto;
+    }
+
+    /* LOGOUT */
+    .logout-btn {
+        margin-top: 12px;
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    /* MAIN */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+
+        box-sizing: border-box;
+
+        padding: 18px 14px !important;
+    }
+
+    /* HEADER */
+    .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    /* STATISTICS */
+    .stats-grid {
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        width: 100%;
+    }
+
+    .stat-card {
+        width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    /* QUICK ACCESS / CONTENT */
+    .dashboard-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        width: 100%;
+    }
+
+    /* CARD */
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* STATUS WEBSITE */
+    .status-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 15px 12px !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-card h3 {
+        font-size: 11px;
+    }
+
+    .stat-card .number {
+        font-size: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 20px;
+    }
+
 }
