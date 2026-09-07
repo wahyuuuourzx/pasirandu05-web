@@ -635,44 +635,17 @@ body {
 /* =========================
    MOBILE
 ========================= */
+
 @media (max-width: 600px) {
 
-    .sidebar {
-        width: 100% !important;
-        position: relative !important;
-
-        overflow: visible !important;
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
-
-    .menu {
-        display: flex !important;
-        flex-direction: row !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-
-        flex-wrap: nowrap !important;
-
-        -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
-
-        scrollbar-width: none;
-    }
-
-    .menu::-webkit-scrollbar {
-        display: none;
-    }
-
-    .menu a {
-        flex: 0 0 auto !important;
-        width: auto !important;
-
-        white-space: nowrap !important;
-    }
-}
 
 
     /* DASHBOARD */
@@ -687,18 +660,18 @@ body {
     /* SIDEBAR */
 
     .sidebar {
-        position: relative !important;
+    position: relative !important;
 
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
+    width: 100% !important;
 
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
 
-        padding: 14px 12px !important;
+    padding: 14px 12px !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box;
     }
 
 
@@ -725,42 +698,60 @@ body {
     }
 
 
-    /* MENU */
+   /* MENU MOBILE */
 
-    .menu {
-    display: flex;
-    flex-direction: row;
+.menu {
+    display: flex !important;
+    flex-direction: row !important;
+
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+
     gap: 6px;
 
-    width: 100%;
-    max-width: 100%;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-wrap: nowrap !important;
 
-    padding: 0 0 6px;
+    padding: 0 0 8px;
 
     scrollbar-width: none;
 
     -webkit-overflow-scrolling: touch;
+
     touch-action: pan-x;
-    }
 
-    .menu::-webkit-scrollbar {
+    overscroll-behavior-x: contain;
+}
+
+.menu::-webkit-scrollbar {
     display: none;
-    }
+}
 
-    .menu a {
-    flex: 0 0 auto;
-    width: auto;
+.menu a {
+    display: flex !important;
 
-    white-space: nowrap;
+    flex: 0 0 auto !important;
 
-    padding: 9px 12px;
+    width: auto !important;
+    min-width: max-content !important;
+
+    white-space: nowrap !important;
+
+    padding: 9px 12px !important;
 
     border-radius: 8px;
-    }
 
+    font-size: 12px;
+}
+
+.menu a span {
+    width: auto !important;
+    min-width: 18px;
+
+    flex-shrink: 0;
+}
     .menu a span {
         width: auto;
 
