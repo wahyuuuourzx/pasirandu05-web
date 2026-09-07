@@ -33,3 +33,24 @@
 
     requireAuth();
 })();
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menu = document.querySelector(".menu");
+    const activeMenu = document.querySelector(".menu a.active");
+
+    if (!menu || !activeMenu) return;
+
+    if (window.innerWidth <= 600) {
+
+        const left =
+            activeMenu.offsetLeft -
+            (menu.clientWidth - activeMenu.offsetWidth) / 2;
+
+        menu.scrollTo({
+            left: Math.max(0, left),
+            behavior: "instant"
+        });
+
+    }
+
+});
