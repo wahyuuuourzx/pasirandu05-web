@@ -713,3 +713,14 @@ if (logoutBtn) {
 // ========================================
 
 loadActivities();
+document.addEventListener("DOMContentLoaded", () => {
+    const activeMenu = document.querySelector(".menu a.active");
+
+    if (activeMenu) {
+        activeMenu.scrollIntoView({
+            behavior: "instant",
+            block: "nearest",
+            inline: "center"
+        });
+    }
+});
