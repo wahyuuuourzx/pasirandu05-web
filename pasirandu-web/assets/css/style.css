@@ -923,25 +923,87 @@ body {
         justify-content: center;
     }
 
-    /* View More */
+    /* ========================================
+   GALLERY - VIEW MORE
+======================================== */
+
+.gallery-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.gallery-more a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background: #111;
+    color: #fff;
+
+    border: 1px solid #111;
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.gallery-more a span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.gallery-more a:hover {
+    background: #fff;
+    color: #111;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-more a:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
 
     .gallery-more {
-        margin-top: 25px;
+        margin-top: 24px;
     }
 
-    .gallery-more .view-more-btn {
-        width: 125px;
-        height: 42px;
-        font-size: 12px;
+    .gallery-more a {
+        padding: 11px 20px;
+        font-size: 13px;
+        gap: 8px;
     }
 
-    .gallery-more .view-more-hover span {
-        font-size: 14px;
+    .gallery-more a span {
+        font-size: 16px;
     }
 
-    .gallery-more .view-more-btn:active {
-        transform: scale(0.96);
-    }
 }
 
 /* =========================================================
@@ -1020,4 +1082,98 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}}/* ========================================
+   FORCE DESIGN VIEW MORE
+======================================== */
+
+div.gallery-more {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 35px 0 10px !important;
+    padding: 0 !important;
+}
+
+div.gallery-more a {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 140px !important;
+    height: 46px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    padding: 0 22px !important;
+
+    background: #111 !important;
+    color: #fff !important;
+
+    border: 1px solid #111 !important;
+    border-radius: 50px !important;
+
+    text-decoration: none !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+
+    box-sizing: border-box !important;
+
+    cursor: pointer !important;
+
+    transition:
+        all 0.25s ease !important;
+}
+
+div.gallery-more a span {
+    display: inline-flex !important;
+    width: 20px !important;
+    height: 20px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 17px !important;
+    line-height: 1 !important;
+
+    transition: transform 0.25s ease !important;
+}
+
+div.gallery-more a:hover {
+    background: #fff !important;
+    color: #111 !important;
+
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+div.gallery-more a:hover span {
+    transform: translate(3px, -3px) !important;
+}
+
+
+/* ========================================
+   MOBILE VIEW MORE
+======================================== */
+
+@media (max-width: 600px) {
+
+    div.gallery-more {
+        margin: 25px 0 5px !important;
+    }
+
+    div.gallery-more a {
+        min-width: 135px !important;
+        height: 44px !important;
+
+        padding: 0 20px !important;
+
+        font-size: 13px !important;
+    }
+
 }
